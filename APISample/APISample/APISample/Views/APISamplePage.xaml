@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="APISample.MainPage">
+
+
+    <ScrollView>
+        <StackLayout>
+            <Entry Placeholder="Enter TrackID"
+                   Text="{Binding TrackId}"/>
+            <Button x:Name="buttonTrackInfo"
+                    Text="Show Track Info"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    Command="{Binding GetTrackCommand}"/>
+            <ListView ItemsSource="{Binding TrackInfo}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Track Id:"/>
+                                <Label Text="{Binding Id}"/>
+                                <Label Text="Track Title"/>
+                                <Label Text="{Binding Title}"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
