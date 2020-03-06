@@ -20,7 +20,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
+                            <StackLayout Orientation="Horizontal">
                                 <Label Text="Track Id:"/>
                                 <Label Text="{Binding Id}"/>
                                 <Label Text="Track Title"/>

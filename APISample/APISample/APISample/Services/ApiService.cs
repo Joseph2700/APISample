@@ -12,10 +12,10 @@ namespace APISample.Services
     {
         public async Task<Track> GetTrackInfo(string id)
         {
-            const string url = "https://deezerdevs-deezer.p.rapidapi.com/track";
-            const string key = "d2a972c2f5msh113d51ba527d802p15f169jsn1ca2a15eb020";
-            HttpClient httpClient = new HttpClient();
-            var result = await httpClient.GetStringAsync(url + id + key);
+            const string url = "https://api.deezer.com/track/";
+            const string key = "/?key=d2a972c2f5msh113d51ba527d802p15f169jsn1ca2a15eb020";
+            HttpClient httpClient = new HttpClient();            
+            var result = await httpClient.GetStringAsync($"{url}{id}{key}");
             return JsonConvert.DeserializeObject<Track>(result);
         }
     }
